@@ -404,14 +404,6 @@ dx run app-table-exporter --project <PROJECT_ID> --destination /output/ ...
 # RIGHT:
 dx run app-table-exporter --destination "<PROJECT_ID>:/output/" ...
 ```
-
-### UKB Data Tips
-
-- **First Occurrences fields** (p130xxx–p132xxx) already combine HES + GP + death registry. You don't need to separately process these sources for ascertainment dates.
-- **NMR QC flags** (p23700–p23780) are mostly empty. Use sample-level missingness instead.
-- **HES ICD-10 array fields** (p41270, p41280) have up to 259 indices per participant — very wide CSVs. For specific ICD-10 codes, prefer First Occurrences or Spark SQL on the `hesin_diag` table.
-- **p2976 vs p2986**: p2976 = age at diabetes diagnosis; p2986 = age started insulin. Commonly confused.
-
 ---
 
 ## Pre-Submission Checklist
